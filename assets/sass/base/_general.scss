@@ -1,0 +1,616 @@
+// Allowing to run foundation.js file
+meta.foundation-data-attribute-namespace {
+	font-family: false;
+}
+
+html {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	background-color: #f7f7f7;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+// Add margin-top to body tag when admin-bar is visible.
+body.admin-bar {
+	padding-top: 32px;
+
+	@media (max-width: 782px) {
+		padding-top: 46px;
+	}
+}
+
+body {
+	font-family: $font-sans;
+	font-size: $global-font-size;
+	line-height: 1.7;
+	overflow-x: hidden;
+}
+
+/**
+ * Since this is dashboard layout we need 100% width on all
+ * elements, so there is no empty space left.
+ */
+.row {
+	max-width: 100%;
+	width: 100%;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: $color-primary;
+		text-decoration: underline;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	line-height: 1.2;
+	font-family: $font-heading;
+
+	// Removes the default margins from the headings.
+	// Add this customly for entry content if needed.
+	margin: 0;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+blockquote {
+	font-style: italic;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	width: 100%;
+	background: #f0f0f0;
+}
+
+// Required WordPress stylings
+img.alignright {
+	margin: 20px 0 20px 20px;
+}
+
+img.alignleft {
+	margin: 20px 20px 20px 0;
+}
+
+img.aligncenter {
+	margin: 20px auto;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Required classes by WordPress. To pass the theme check
+ * stylings to those must be applied, since the SASS watch
+ * script is skipping classes that have no properties.
+ */
+.sticky {
+	display: block;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ol, ul {
+	margin: 0;
+	padding: 0px 20px;
+}
+
+ol {
+	counter-reset: item;
+
+	li {
+		box-sizing: inherit;
+		list-style-type: decimal;
+	}
+}
+
+.content-line {
+	ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		& > li {
+			display: table;
+			counter-increment: item;
+			margin-bottom: 0.6em;
+
+			&:before {
+				content: counters(item, ".") ". ";
+				display: table-cell;
+				padding-right: 5px; 
+			}
+		}
+	}
+
+	li {
+		ol > li {
+			margin: 0;
+
+			&:before {
+				content: counters(item, ".") " ";
+				padding-right: 5px;
+			}
+		}
+
+		ul > li {
+			margin: 0;
+			
+			&:before {
+				content: "\2022";
+				padding-right: 5px;
+			}
+		}
+	}
+
+	li > ul,
+	li > ol {
+		margin-bottom: 0;
+		margin-left: 27px;
+		padding: 0;
+	}
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+
+	/* Above WP toolbar. */
+}
+
+// Do not show the outline on the skip link target.
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+// Media
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+// Captions
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery-item img {
+	display: block;
+}
+
+.gallery-columns-1 .gallery-item {
+	max-width: 100%;
+}
+
+.gallery-columns-1.gallery-size-thumbnail .gallery-item,
+.gallery-columns-2.gallery-size-thumbnail .gallery-item,
+.gallery-columns-3.gallery-size-thumbnail .gallery-item,
+.gallery-columns-4.gallery-size-thumbnail .gallery-item,
+.gallery-columns-5.gallery-size-thumbnail .gallery-item,
+.gallery-columns-6.gallery-size-thumbnail .gallery-item,
+.gallery-columns-7.gallery-size-thumbnail .gallery-item {
+	width: auto;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 48%;
+	max-width: -webkit-calc(50% - 4px);
+	max-width: calc(50% - 4px);
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 32%;
+	max-width: -webkit-calc(33.3% - 4px);
+	max-width: calc(33.3% - 4px);
+}
+
+.gallery-columns-3.gallery-size-thumbnail img {
+	width: 100%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 23%;
+	max-width: -webkit-calc(25% - 4px);
+	max-width: calc(25% - 4px);
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 19%;
+	max-width: -webkit-calc(20% - 4px);
+	max-width: calc(20% - 4px);
+}
+
+.gallery-columns-5.gallery-size-thumbnail {
+	margin-left: calc(50% - 393px);
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 15%;
+	max-width: -webkit-calc(16.7% - 4px);
+	max-width: calc(16.7% - 4px);
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 13%;
+	max-width: -webkit-calc(14.28% - 4px);
+	max-width: calc(14.28% - 4px);
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 11%;
+	max-width: -webkit-calc(12.5% - 4px);
+	max-width: calc(12.5% - 4px);
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 9%;
+	max-width: -webkit-calc(11.1% - 4px);
+	max-width: calc(11.1% - 4px);
+}
+
+.gallery-size-medium img,
+.gallery-size-large img {
+	max-width: none;
+}
+
+.gallery-size-medium .gallery-item,
+.gallery-size-large .gallery-item {
+	max-height: 235px;
+	overflow: hidden;
+}
+
+.gallery-columns-2.gallery-size-large .gallery-item {
+	max-height: 350px;
+	overflow: hidden;
+}
+
+.gallery-columns-1.gallery-size-large .gallery-item,
+.gallery-columns-1.gallery-size-full .gallery-item {
+	max-height: none;
+}
+
+.gallery-size-full img {
+	max-width: none;
+}
+
+.gallery-size-full .gallery-item {
+	max-height: 300px;
+	overflow: hidden;
+}
+
+.gallery-size-full a,
+.gallery-size-medium a,
+.gallery-size-large a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery-columns-3.gallery-size-medium {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	margin-right: 0;
+}
+
+.gallery-columns-1.gallery-size-medium figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-1.gallery-size-thumbnail figure.gallery-item:nth-of-type(1n+1),
+.gallery-columns-2.gallery-size-thumbnail figure.gallery-item:nth-of-type(2n+1),
+.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) {
+	clear: left;
+}
+
+.gallery-size-thumbnail .gallery-caption {
+	height: 55%;
+	overflow: hidden;
+}
+
+.gallery-caption {
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+}
+
+.gallery-caption:before {
+	content: "";
+	height: 100%;
+	min-height: 49px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
+
+figure {
+	margin: 2px;
+}
+
+// ==========================================================================
+// Basic stylings
+// ==========================================================================
+
+button,
+input,
+select,
+textarea {
+	@extend .inputs;
+}
+
+.inputs {
+	display: block;
+	padding: 5px;
+	width: 100%;
+	border-radius: 0;
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+input[type="search"] {
+	padding: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+	padding: 20px;
+	background-position: 20px 15px;
+	font-size: 18px;
+	color: #838383;
+	font-weight: 100;
+
+	&:before {
+		color: #838383;
+		content: "\f10e";
+		font-family: FontAwesome;
+		margin-left: -40px;
+		position: absolute;
+		font-size: 12px;
+	}
+
+	p {
+		border-left: 1px solid #efefef;
+		padding-left: 20px;
+	}
+}
+
+cite {
+	text-transform: uppercase;
+	padding-left: 80px;
+
+	&:before {
+		content: "\2014 \2009";
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 20px 0;
+
+    thead {
+        background: #f8f8f8;
+
+        th {
+            padding: 10px;
+        }
+    }
+
+    td {
+        padding: 20px 10px;
+    }
+
+    tr {
+        border-bottom: 1px solid #eee;
+        transition: 0.2s;
+    }
+
+    tr:hover {
+        background-color: #fafafa;
+        transition: 0s;
+    }
+}

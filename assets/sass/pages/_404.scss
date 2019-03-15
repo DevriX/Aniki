@@ -1,0 +1,29 @@
+.not-found {
+  .search-form {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    label {
+      display: inline-block;
+    }
+
+    .search-submit {
+      width: auto;
+      display: inline-block;
+      height: 38px;
+    }
+  }
+}
+
+
+.error404 {
+  .error-message {
+    text-align: center;
+  }
+  
+  textarea,
+  select {
+    width: auto;
+  }
+}

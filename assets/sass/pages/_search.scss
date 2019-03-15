@@ -1,0 +1,28 @@
+.no-results {
+	.page-content {
+		p {
+			text-align: center;
+		}
+
+		.search-form {
+			display: flex;
+			align-self: center;
+			justify-content: center;
+
+			label {
+				display: inline-block;
+			}
+
+			.search-submit {
+				width: auto;
+				display: inline-block;
+				height: 38px;
+			}
+		}
+	}
+}
+
+.search-field {
+	height: 38px;
+	border: 1px solid #bdbdbd;
+}

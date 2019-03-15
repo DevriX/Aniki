@@ -1,0 +1,16 @@
+input {
+	max-width: 100%;
+	width: 100%;
+
+	&[type='submit'] {
+		background-color: #000000;
+		color: #fff;
+		border: none;
+	}
+}
+
+textarea,
+select {
+	max-width: 100%;
+	width: 100%;
+}

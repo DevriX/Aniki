@@ -1,0 +1,213 @@
+# Copyright (C) 2016 Devrix
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/aniki\n"
+"POT-Creation-Date: 2016-06-27 20:48-0700\n"
+"PO-Revision-Date: 2016-06-27 20:50-0700\n"
+"Last-Translator: fernando villamor <fervillz@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: esc_html_e;esc_html__;esc_html;__;esc_attr;esc_html_x;"
+"esc_attr;esc_url\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+# @ aniki
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+# @ aniki
+#: 404.php:23
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+# @ aniki
+#: 404.php:34
+msgid "Most Used Categories"
+msgstr ""
+
+# @ aniki
+#: 404.php:52
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+# @ aniki
+#: comments.php:37 comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+# @ aniki
+#: comments.php:40 comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+# @ aniki
+#: comments.php:43 comments.php:67
+msgid "Newer Comments"
+msgstr ""
+
+# @ aniki
+#: comments.php:82
+msgid "Comments are closed."
+msgstr ""
+
+# @ aniki
+#: footer.php:23
+msgid "https://wordpress.org/"
+msgstr ""
+
+# @ aniki
+#: footer.php:24
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:27
+#, php-format
+msgid "Developed by %1$s."
+msgstr ""
+
+# @ aniki
+#: functions.php:79
+msgid "Primary"
+msgstr ""
+
+# @ aniki
+#: functions.php:122
+msgid "Sidebar"
+msgstr ""
+
+# @ aniki
+#: header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "Welcome message"
+msgstr ""
+
+#: inc/customizer.php:32
+msgid ""
+"Hey there, nice to meet you! Thanks for coming by to my awesome blog site. I "
+"hope you enjoy you stay here and give me some feedback on the content I "
+"provided."
+msgstr ""
+
+#: inc/customizer.php:42
+msgid "Welcome message text"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Add your welcome message below"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgid "by %s"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+# @ aniki
+#: inc/template-tags.php:71 template-parts/content-page.php:33
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+# @ aniki
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-feature-post.php:23
+#: template-parts/content-single.php:35 template-parts/content.php:35
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+# @ aniki
+#: template-parts/content-feature-post.php:49
+#: template-parts/content-page.php:22 template-parts/content-search.php:45
+#: template-parts/content.php:92
+msgid "Pages:"
+msgstr ""
+
+# @ aniki
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+# @ aniki
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+# @ aniki
+#: template-parts/content-none.php:26
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+# @ aniki
+#: template-parts/content-none.php:32
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-single.php:51 template-parts/content.php:51
+#, php-format
+msgid "View all posts with %s"
+msgstr ""

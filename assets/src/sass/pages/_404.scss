@@ -1,0 +1,17 @@
+.error404 {
+	.error-message {
+		text-align: center;
+	}
+
+	textarea,
+	select {
+		width: auto;
+	}
+}
+
+.not-found {
+	.page-content {
+		max-width: 420px;
+		margin: 40px auto 0;
+	}
+}

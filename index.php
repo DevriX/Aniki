@@ -21,7 +21,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="columns small-12">
 					<div class="welcome-message">
-						<?php echo $aniki_welcome_message_setting; ?>
+						<?php echo esc_html( $aniki_welcome_message_setting ); ?>
 					</div><!-- .welcome-message -->
 				</div>
 			</div><!-- .row -->
@@ -35,13 +35,13 @@ get_header(); ?>
 
 						<?php
 							// WP_Query arguments
-							$args = array (
+							$aniki_args = array (
 								'post_status'	=> array( 'publish' ),
 								'paged'			=> $paged,
 							);
 
 							// The Query
-							$aniki_index_query = new WP_Query( $args );
+							$aniki_index_query = new WP_Query( $aniki_args );
 
 							if ( $aniki_index_query->have_posts() ) :
 

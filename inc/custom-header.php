@@ -30,7 +30,6 @@ function aniki_custom_header_setup() {
 		'wp-head-callback'       => 'aniki_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'aniki_custom_header_setup' );
 
 if ( ! function_exists( 'aniki_header_style' ) ) :
 /**
@@ -39,13 +38,13 @@ if ( ! function_exists( 'aniki_header_style' ) ) :
  * @see aniki_custom_header_setup().
  */
 function aniki_header_style() {
-	$header_text_color = get_header_textcolor();
+	$aniki_header_text_color = get_header_textcolor();
 
 	/*
 	 * If no custom options for text are set, let's bail.
 	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
 	 */
-	if ( add_theme_support( 'custom-header' ) === $header_text_color ) {
+	if ( add_theme_support( 'custom-header' ) === $aniki_header_text_color ) {
 		return;
 	}
 
@@ -67,7 +66,7 @@ function aniki_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
+			color: #<?php echo esc_attr( $aniki_header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>

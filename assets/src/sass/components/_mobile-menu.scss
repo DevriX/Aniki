@@ -1,0 +1,489 @@
+/**
+* DX MOBILE MENU
+* ============================================================================
+* Basic styling and settings for the mobile menu. Edit to match each theme's
+* design.
+*
+* @version 1.1
+*/
+
+/**
+* VARIABLES
+* ============================================================================
+* Setting the menu default variables for easier tweaks.
+*/
+$menu-allow-animation: true;
+$menu-breakpoint: $breakpoint-small;
+
+$menu-icon-size: 26px;
+$menu-icon-line-height: 1;
+$menu-icon-color: #333;
+$menu-icon-color-hover: $color-primary;
+$menu-icon-background: none;
+$menu-icon-border: none;
+
+$menu-item-weight: bold;
+$menu-item-spacing: 20px;
+$menu-item-color: black;
+$menu-item-color-hover: $color-primary;
+$menu-item-border-bottom: 1px solid #f0f0f0;
+
+// Needs higher value for different header heights.
+$menu-container-margin-top: 0;
+$menu-container-background: #fff;
+$menu-container-border-bottom: 1px solid #f0f0f0;
+$menu-container-shadow: 0 10px 20px rgba(black, 0.1);
+
+$submenu-background: #f0f0f0;
+$submenu-border-top: 1px solid #ccc;
+$submenu-shadow: none;
+$submenu-safe-zone: 16px;
+
+$menu-dropdown-arrow-line-height: 1.7;
+$menu-dropdown-arrow-size: 20px;
+
+/**
+* Needs to be used when the mobile menu covers the whole screen while opened
+* and its possible to scroll inside the menu while maitaining the wrapper element's
+* positioning. Keep commented out by default.
+*/
+body.is-menu-opened {}
+
+.dropdown-toggle {
+	display: none;
+}
+
+/**
+* Primary navigation base styling.
+* ============================================================================
+*/
+
+@media (max-width: $breakpoint-mobile) {
+	.menu-primary-container {
+		margin-top: 1px;
+		padding: 0 10px;
+	}
+
+	.sub-menu a {
+		font-size: 12px;
+	}
+}
+
+.menu-toggle {
+	display: inline-block;
+	width: 35px;
+	color: $menu-icon-color;
+	line-height: $menu-icon-line-height;
+	font-size: $menu-icon-size;
+	background: $menu-icon-background;
+	border: $menu-icon-border;
+	text-align: right;
+
+	&:hover {
+		cursor: pointer;
+		color: $menu-icon-color-hover;
+	}
+
+	&:focus {
+		color: $menu-icon-color-hover;
+		outline: none;
+	}
+}
+
+.main-navigation {
+	text-align: right;
+
+	.menu {
+		padding: 0;
+	}
+
+	ul.menu > li {
+		margin: 0 15px;
+		padding-bottom: 18px;
+
+		@media (max-width: $breakpoint-small) {
+			padding-top: 0px;
+			padding-bottom: 0px;
+
+			a {
+				padding-top: 18px;
+				padding-bottom: 18px;
+			}
+		}
+
+		@media (max-width: $breakpoint-mobile) {
+			margin-left: 0;
+			padding-bottom: 0;
+
+			a {
+				padding: 0 20px;
+			}
+		}
+	}
+
+	ul.menu  li {
+		@media (max-width: $breakpoint-mobile) {
+			padding: 0.7em;
+		}
+	}
+
+	ul.menu li .sub-menu li {
+		@media (max-width: $breakpoint-mobile) {
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.menu-item,
+	.page_item {
+		display: inline-block;
+		position: relative;
+		text-transform: uppercase;
+		transition: 150ms;
+		border-bottom: 2px solid #fff;
+
+		a {
+			color: $menu-item-color;
+			font-size: 14px;
+			
+			&:focus {
+				outline: none;
+			}
+
+			@media (max-width: $breakpoint-mobile) {
+				padding: 10px 0;
+				text-align: left;
+			}
+		}
+
+		&:hover, &:focus-within, 
+		&.current_page_item.menu-item-home {
+			border-bottom: 2px solid #ff6969;
+			transition: 150ms;
+
+			a {	
+				text-decoration: none;
+			}
+		}
+	}
+
+	.sub-menu ul {
+		margin-left: 100%;
+		margin-top: -55px;
+	}
+
+	/**
+	 * Begin the mobile menu styling.
+	 */
+
+	@media (max-width: $menu-breakpoint) {
+		.menu-item {
+			margin: 0;
+			display: block;
+			border: none;
+			
+			a {
+				display: block;
+			}
+
+			a:hover, a:focus {
+				color: $menu-item-color-hover;
+			}
+			
+			&:hover {
+				border-color: transparent;
+			}
+
+			&:focus-within {
+				border: none;
+			}
+		}
+
+		.sub-menu {
+			display: none;
+			border-top: $submenu-border-top;
+			margin-top: 0.5em;
+
+			a {
+				padding: 6px 0;
+			}
+
+			ul {
+				margin: 0;
+
+				li:focus {
+					border-bottom: none;
+				}
+			}
+
+			li {
+				padding-top: 0.1em;
+				padding-bottom: 0.1em;
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		.sub-menu.toggled-on {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-small) {
+	ul ul .dropdown-toggle {
+		height: 30px;
+
+		&:after {
+			font-size: 20px;
+		}
+	}
+
+	.dropdown-toggle {
+		display: block;
+		background-color: transparent;
+		border: 0;
+		outline: none;
+		border-radius: 0;
+		color: #1a1a1a;
+		content: "";
+		height: 45px;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		text-transform: none;
+		top: 0;
+		width: 48px;
+
+		&:focus-within::after {
+			color: $menu-icon-color-hover;
+			border-left: 1px solid #ff6969;
+		}
+
+		&:after {
+			border-left: 1px solid #d1d1d1;
+			content: "\f107";
+			font-size: 24px;
+			position: relative;
+			width: 48px;
+			display: inline-block;
+			font-family: "Font Awesome 5 Free";
+			color: #000;
+			line-height: 1.5;
+			font-weight: 900;
+		}
+
+		&.toggled-on:after {
+			content: "\f106";
+		}
+	}
+
+	.screen-reader-text {
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		width: 1px;
+		word-wrap: normal;
+	}
+}
+
+/**
+* Displaying the mobile menu on click.
+*/
+@media (max-width: 960px)	{
+	.main-navigation {
+		flex: 1 1 100%;
+		width: 100%;
+		text-align: center;
+		align-self: center;
+	}
+}
+
+@media (max-width: $menu-breakpoint) {
+	.main-navigation {
+		flex: 1 1 100%;
+		width: 100%;
+		display: none;
+
+		&.toggled {
+			display: block;
+			position: absolute;
+			bottom: 0;
+
+			.menu-primary-container {
+				position: absolute;
+				box-shadow: 0 5px 5px -6px #000;
+				z-index: 99999999;
+
+				.menu-item {
+					a {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+
+	.menu-primary-container {
+		display: none;
+		position: relative;
+		left: 0;
+		width: 100%;
+		margin-top: $menu-container-margin-top;
+		background: $menu-container-background;
+		border-bottom: $menu-container-border-bottom;	
+	}
+
+	&.is-extended .menu-primary-container {
+		display: block;
+		z-index: 999;
+	}
+
+	&.is-extended .menu-primary {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+}
+
+/**
+* Starts the standard desktop menu styling.
+*/
+@media (min-width: $menu-breakpoint) {
+	.menu-primary-container {
+		display: block; 
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation {
+		.sub-menu {
+			pointer-events: none;
+			opacity: 0;
+			transition: 0.2s;
+			transform: translateY(40px);
+		}
+
+		// Sly show the dropdown menu on hover
+		.menu-item-has-children:hover > .sub-menu {
+			display: block;
+		}
+
+		li {
+			position: relative;
+		}
+
+		li:hover > .sub-menu {
+			opacity: 1;
+			pointer-events: auto;
+			transition: 0.2s;
+			transform: translateY(0);
+		}
+		.menu-item-has-children:focus-within > .sub-menu {
+			display: block;
+			opacity: 1;
+			pointer-events: auto;
+			transition: 0.2s;
+			transform: translateY(0);
+		}
+		
+	}
+
+	.menu-item:last-of-type .sub-menu {
+		left: auto;
+	}
+
+	nav {
+		.sub-menu {
+			position: absolute;
+			border: 1px solid #ccc;
+			top: calc(100% + #{$submenu-safe-zone - 2} );
+			background: #fff;
+			max-width: 200px;
+			text-align: left;
+			z-index: 99;
+
+			// Used for easier hover movement.
+			&:before {
+				position: absolute;
+				bottom: 100%;
+				width: 100%;
+				height: $submenu-safe-zone;
+				background: transparent;
+				content: '';
+				display: block;
+			}
+
+			a {
+				display: block;
+				padding: 8px 13px;
+				font-weight: normal;
+				color: black;
+
+				&:hover {
+					background: transparent;
+					color: $color-primary;
+				}
+			}
+
+			li {
+				width: 100%;
+				border-bottom: 1px solid #f0f0f0;
+				float: none;
+				min-width: 200px;
+				display: block;
+			}
+		}
+	}
+}
+
+/**
+* Styling the dropdown-arrow element. It takes more properties
+* so its in separate module here in the file.
+*/
+.menu-item-has-children {
+	position: relative;
+
+	.dropdown-arrow {
+		height: rem-calc(10px + 16px * 2);
+		width: rem-calc(10px + 16px * 2);
+		font-family: "Font Awesome 5 Free";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		padding: 4px;
+		line-height: $menu-dropdown-arrow-line-height;
+		font-size: $menu-dropdown-arrow-size;
+
+		// Disable select while clicking
+		&,
+		& i {
+			user-select: none;
+			padding-top: 5px;
+		}
+	}
+
+	&.is-extended > .dropdown-arrow {
+		transform: rotate(90deg);
+	}
+
+	@media (min-width: $menu-breakpoint) {
+		.dropdown-arrow {
+			display: none;
+		}
+	}
+}

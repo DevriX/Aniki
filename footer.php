@@ -15,7 +15,7 @@
 <footer id="colophon" class="site-footer section-fullwidth">
 	<div class="row">
 		<div class="columns small-12">
-			
+
 			<?php if ( has_nav_menu( 'primary' ) ): ?>
 			<div class="menu-primary-footer">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => 1 ) ); ?>
@@ -25,10 +25,14 @@
 			<!-- .menu-primary-container -->
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aniki' ) ); ?>">
-					<?php printf( esc_html__( 'Proudly powered by %s', 'aniki' ), 'WordPress' ); ?>
+					<?php printf(
+						/* translators: used in the footer bottom line on the whole site*/
+						 esc_html__( 'Proudly powered by %s', 'aniki' ), 'WordPress' ); ?>
 				</a>
 				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Developed by %1$s.', 'aniki' ),'<a href="https://devrix.com/">DevriX</a>' ); ?>
+				<?php printf(
+					/* translators: used in the footer bottom line on the whole site*/
+					esc_html__( 'Developed by %1$s.', 'aniki' ),'<a href="https://devrix.com/">DevriX</a>' ); ?>
 			</div>
 			<!-- .site-info -->
 		</div>

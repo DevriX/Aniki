@@ -1,0 +1,178 @@
+.site-header {
+	position: relative;
+	border-bottom: 1px solid #f0ede5;
+	background: #fff;
+	margin-bottom: 50px;
+	width: 100%;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: row wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-medium) {
+		display: block;
+		text-align: center;
+	}
+
+	@media (max-width: $breakpoint-mobile) {
+		margin-bottom: 5px;
+		padding: 0;
+
+		.site-logo {
+			text-align: left;
+		}
+	}
+}
+
+.site-description {
+	font-size: 12px;
+	line-height: normal;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	display: none;
+}
+
+.site-branding {
+	font-family: $font-calibri;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-grow: 1;
+	margin: 0;
+	padding: 10px;
+
+	@media (max-width: $breakpoint-small) {
+		justify-content: space-around;	
+	}
+
+	.site-logo {
+		flex-basis: 300px;
+
+		@media (max-width: $breakpoint-medium) {
+			width: 100%;
+			display: block;
+			text-align: left;
+		}
+	}
+
+	.site-title {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 24px;
+
+		a {
+			text-decoration: none;
+		}
+
+		@media (max-width: $breakpoint-medium) {
+			margin: 0;
+		}
+	}
+
+	// Top searchbar
+	.site-search {
+		@extend .inputs;
+
+		display: flex;
+		align-items: center;
+		margin-left: 5px;
+
+		form {
+			margin-left: 13px;
+			display: inline-block;
+
+			input {
+				width: auto;
+			}
+		}
+
+		.search-field {
+			border: 1px solid transparent;
+			background: transparent;
+
+			&:focus {
+				outline: none;
+				border: 1px solid #404040;
+			}
+		}
+
+		.search-submit {
+			display: none;
+		}
+
+		@media (max-width: $breakpoint-medium) {
+			min-width: 175px;
+		}
+		@media (max-width: $breakpoint-small) {
+			display: none;
+		}
+	}
+
+	@media (max-width: $breakpoint-small) {
+		flex: 100%;
+		width: 100%;
+	}
+
+	@media (max-width: $breakpoint-medium) {
+		flex: 100%;
+		width: 100%;
+	}
+}
+
+@media (min-width: 640px ) {
+	.long-menu .site-header {
+		flex-direction: column;
+		margin-top: 0;
+		padding-top: 0;
+
+		.site-logo {
+			flex-direction: column;
+		}
+
+		.main-navigation,
+		.menu-primary-container,
+		.menu {
+			width: 100%;
+		}
+
+		.menu,
+		.menu > ul {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+		}
+
+		.menu-item,
+		.page_item {
+			flex: 1 1 auto;
+			text-align: center;
+
+			a {
+				display: block;
+			}
+
+			.menu-item,
+			.page_item {
+				text-align: left;
+			}
+
+			&:first-child {
+				margin-left: 0;
+				margin-top: 1px;
+			}
+		}
+
+		.site-branding {
+			display: flex;
+			margin: 0;
+			padding: 20px;
+			flex: 100%;
+			width: 100%;
+
+			.site-logo {
+				display: block;
+			}
+		}
+	}
+}

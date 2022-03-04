@@ -20,7 +20,9 @@ get_header(); ?>
 						<?php
 					if ( have_posts() ) : ?>
 							<header class="page-header">
-								<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'aniki' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+								<h1 class="page-title"><?php printf(
+								/* translators: Shows the search results */
+								esc_html__( 'Search Results for: %s', 'aniki' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 							</header>
 							<!-- .page-header -->
 							<?php
